@@ -1,23 +1,19 @@
-function btnCreateTask() {
-    return $('id=addTaskButton');
-}
-
-function btnNewTaskTitle(){
-    return $('//android.widget.ListView/android.widget.TextView[last()]')
-}
+export const MAIN_PAGE_SELECTORS = {
+    CREATE_TASK_BUTTON: 'id=addTaskButton',
+    NEW_TASK_TITLE_BUTTON: '//android.widget.ListView/android.widget.TextView[last()]',
+};
 
 async function goToCreateTaskPage() {
-    await (await btnCreateTask()).click()
+    await $(MAIN_PAGE_SELECTORS.CREATE_TASK_BUTTON).click()
 }
 
 async function goToTaskPage() {
-    await (await btnNewTaskTitle()).click()
+    await $(MAIN_PAGE_SELECTORS.NEW_TASK_TITLE_BUTTON).click()
 }
 
 const MainPage = {
     goToCreateTaskPage,
-    goToTaskPage,
-    btnNewTaskTitle
+    goToTaskPage
 }
 
 export default  MainPage;

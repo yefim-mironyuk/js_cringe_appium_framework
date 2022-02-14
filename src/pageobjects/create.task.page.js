@@ -1,21 +1,14 @@
-
-function inputTitle() {
-        return $('id=taskTitleEditText');
-}
-
-function inputDescription() {
-        return $('id=taskDescriptionEditText');
-}
-
-function btnSaveTask() {
-        return $('id=saveTaskButton');
-}
+export const CREATE_PAGE_SELECTORS = {
+        TITLE_INPUT: 'id=taskTitleEditText',
+        DESCRIPTION_INPUT: 'id=taskDescriptionEditText',
+        SAVE_TASK_BUTTON: 'id=saveTaskButton',
+};
 
 
 async function createNewTask(title, description) {
-        await (await inputTitle()).setValue(title);
-        await (await inputDescription()).setValue(description);
-        await (await btnSaveTask()).click();
+        await $(CREATE_PAGE_SELECTORS.TITLE_INPUT).setValue(title);
+        await $(CREATE_PAGE_SELECTORS.DESCRIPTION_INPUT).setValue(description);
+        await $(CREATE_PAGE_SELECTORS.SAVE_TASK_BUTTON).click();
 }
 
 const CreateTaskPage = {

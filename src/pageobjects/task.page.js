@@ -1,28 +1,21 @@
-function inputNewTitle() {
-        return $('id=taskTitleEditText');
-}
-
-function btnSaveChanges() {
-        return $('id=saveTaskButton');
-}
-
-function errorMessage() {
-        return $('id=snackbar_text')
-}
+export const TASK_PAGE_SELECTORS = {
+    TITLE_INPUT: 'id=taskTitleEditText',
+    SAVE_CHANGES_BUTTON: 'id=saveTaskButton',
+    ERROR_MESSAGE: 'id=snackbar_text',
+};
 
 async function renameTask(new_title) {
-        await (await inputNewTitle()).clearValue()
-        await (await inputNewTitle()).setValue(new_title);
-        await (await btnSaveChanges()).click();
+        await $(TASK_PAGE_SELECTORS.TITLE_INPUT).clearValue();
+        await $(TASK_PAGE_SELECTORS.TITLE_INPUT).setValue(new_title);
+        await $(TASK_PAGE_SELECTORS.SAVE_CHANGES_BUTTON).click();
 }
 
 async function clearTitle(){
-        await (await inputNewTitle()).clearValue();
-        await (await btnSaveChanges()).click();
+        await $(TASK_PAGE_SELECTORS.TITLE_INPUT).clearValue();
+        await $(TASK_PAGE_SELECTORS.SAVE_CHANGES_BUTTON).click();
 }
 
 const TaskPage = {
-    errorMessage,
     renameTask,
     clearTitle
 }
