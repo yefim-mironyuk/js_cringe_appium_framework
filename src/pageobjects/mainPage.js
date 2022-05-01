@@ -4,16 +4,16 @@ export const MAIN_PAGE_SELECTORS = {
 };
 
 async function goToCreateTaskPage() {
-    await $(MAIN_PAGE_SELECTORS.CREATE_TASK_BUTTON).click()
+    await $(MAIN_PAGE_SELECTORS.CREATE_TASK_BUTTON).click();
 }
 
 async function goToTaskPage() {
-    await $(MAIN_PAGE_SELECTORS.NEW_TASK_TITLE_BUTTON).click()
+    await $(MAIN_PAGE_SELECTORS.NEW_TASK_TITLE_BUTTON).click();
 }
 
 const MainPage = {
     goToCreateTaskPage,
-    goToTaskPage
-}
+    goToTaskPage,
+};
 
-export default  MainPage;
+export default MainPage;

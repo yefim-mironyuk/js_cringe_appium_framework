@@ -1,14 +1,13 @@
 exports.config = {
     port: 4723,
     specs: [
-        './src/specs/native-apk.spec.js'
+        './src/specs/nativeApk.spec.js'
     ],
     maxInstances: 10,
     capabilities: [{
         platformName: 'Android',
         'appium:deviceName': 'AndroidEmulator',
-        //INSERT PATH TO YOUR APP BELOW
-        "appium:app": "YOUR PATH"
+        "appium:app": "C:\\Users\\Yaukhim.Miraniuk\\WebstormProjects\\js_cringe_appium_framework\\src\\apps\\app1.apk"
     }],
     logLevel: 'info',
     bail: 0,

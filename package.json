@@ -2,7 +2,10 @@
   "name": "1234",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "wdio.conf.js",
+  "directories": {
+    "test": "src/specs/**/"
+  },
   "scripts": {
     "test": "wdio wdio.conf.js"
   },
@@ -17,6 +20,7 @@
     "@wdio/mocha-framework": "^7.16.14",
     "@wdio/spec-reporter": "^7.16.14",
     "babel-plugin-module-resolver": "^4.1.0",
+    "prettier": "2.6.2",
     "wdio-wait-for": "^2.2.1"
   },
   "dependencies": {
